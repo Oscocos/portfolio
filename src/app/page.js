@@ -4,6 +4,7 @@ import LinkedInIcon from '../components/icons/InBug-Black.svg';
 import GitHubIcon from '../components/icons/github-mark.svg';
 import AnimatedSection from "../components/AnimatedSection";
 import WorkExperience from "../components/WorkExperience";
+import Projects from "../components/ProjectsSection"
 import GmailIcon from '../components/icons/gmail-icon.svg';
 import { useEffect, useState } from "react";
 
@@ -107,32 +108,76 @@ export default function Home() {
           <AnimatedSection 
             title="Projects" 
             titleStyle={{ color: "#0AFFED"}}
-          />
-
-          <AnimatedSection 
-            title="Education"
-            titleStyle={{ color: "#0AFFED"}}
           >
             <div 
-            className="bg-[#000000]/99  border rounded-md p-6 shadow-md max-w-3xl mx-auto text-slate-300"
-            style={{color: "#BADEFC", borderColor: "#0AFFED"}}
+              className="bg-[#000000] border rounded-md p-6 shadow-md max-w-3xl mx-auto"
+              style={{ borderColor: "#0AFFED" }}
             >
+              <Projects
+                projects={[
+                  {
+                    title: 'Wrapped Now (JavaScript, HTML, CSS)',
+                    stack: 'JavaScript, HTML, CSS, Spotify API, OAuth 2.0',
+                    description: [
+                      'Engineered and deployed an interactive web application using the Spotify API.',
+                      'Enabled secure user login via OAuth 2.0.',
+                      'Displayed top artists and songs across 1, 6, and 12-month timeframes.',
+                    ],
+                    github: 'https://github.com/yourusername/wrapped-now',
+                  },
+                  {
+                    title: 'TV Time (Java, C++)',
+                    stack: 'Java, C++, Gson API',
+                    description: [
+                      'Parsed and converted JSON using Gson API, reducing data fetching time by 35%.',
+                      'Built an Object-Oriented structure to manage TV data efficiently.',
+                      'Added features to retrieve episodes by various parameters.',
+                    ],
+                    github: 'https://github.com/yourusername/tv-time',
+                  },
+                  {
+                    title: 'QuickEats (Java)',
+                    stack: 'Java, Android, Google Places API',
+                    description: [
+                      'Developed an Android app for restaurant recommendations.',
+                      'Integrated location services and Places API to suggest 300+ nearby options.',
+                      'Designed UI for flexible filtering by food type and distance.',
+                    ],
+                    github: 'https://github.com/yourusername/quick-eats',
+                  },
+                ]}
+              />
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection title="Education" titleStyle={{ color: "#0AFFED" }}>
+            <div 
+              className="relative border rounded-md p-6 shadow-md max-w-3xl mx-auto"
+              style={{ borderColor: "#0AFFED", color: "#BADEFC" }}
+            >
+              <div className="absolute inset-0 bg-[#050505] rounded-md -z-10" />
               <p className="font-semibold text-purple-300 mt-2 text-glow">
                 University of Illinois at Urbana-Champaign
               </p>
-              <p className="italic text-sm text-[#EEF0F2] text-glow mt-2 mb-2">
+              <p className="italic text-sm text-[#BADEFC] text-glow mt-2 mb-2">
                 B.S. in Computer Science + Astronomy &nbsp;&bull;&nbsp; August 2018 – December 2023
               </p>
-              <p className="font-semibold mt-2 text-[#0AFFED] text-glow">Related Coursework:</p>
-              <ul className="list-disc list-inside space-y-1 list-disc list-inside space-y-2 font-semibold leading-relaxed text-[#EEF0F2] text-glow mt-2">
-                <li>Software Design Studio</li>
-                <li>Data Structures and Algorithms</li>
-                <li>System Programming</li>
-                <li>Computer Architecture</li>
-                <li>Artificial Intelligence</li>
-                <li>Programming for Data Science</li>
-                <li>Statistical Analysis</li>
-                <li>Algorithms & Models of Computation</li>
+              <p className="font-semibold mt-2 text-[#0AFFED] text-glow">
+                Related Coursework:
+              </p>
+              <ul className="list-disc list-inside space-y-2 font-bold leading-relaxed text-[#EEF0F2] mt-2 text-glow">
+                {[
+                  "Software Design Studio",
+                  "Data Structures and Algorithms",
+                  "System Programming",
+                  "Computer Architecture",
+                  "Artificial Intelligence",
+                  "Programming for Data Science",
+                  "Statistical Analysis",
+                  "Algorithms & Models of Computation"
+                ].map((course, idx) => (
+                  <li key={idx}>{course}</li>
+                ))}
               </ul>
             </div>
           </AnimatedSection>
