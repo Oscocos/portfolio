@@ -55,3 +55,9 @@ html, body {
   font-style: italic;
   font-display: swap;
 }
+
+.text-glow {
+  text-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.75),
+    0 6px 12px rgba(0, 0, 0, 0.5);
+}
