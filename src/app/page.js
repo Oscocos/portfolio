@@ -1,5 +1,7 @@
 "use client";
 
+import LinkedInIcon from '../components/icons/InBug-Black.svg';
+import GitHubIcon from '../components/icons/github-mark.svg';
 import AnimatedSection from "../components/AnimatedSection";
 import WorkExperience from "../components/WorkExperience";
 import { useEffect, useState } from "react";
@@ -18,55 +20,71 @@ export default function Home() {
       {/* Gradient Blur Background */}
       <div
         aria-hidden="true"
-        className="absolute left-1/2 -translate-x-1/2 transform rounded-full bg-gradient-to-tr from-purple-600 to-indigo-400 opacity-40 blur-3xl w-[72rem] h-[72rem] pointer-events-none"
+        className="absolute left-1/2 -translate-x-1/2 transform rounded-full bg-gradient-to-tr from-purple-600 to-indigo-400 opacity-40 blur-3xl w-[50rem] h-[50rem] pointer-events-none"
         style={{
-          top: `${-300 + scrollY * 0.6}px`,
+          top: `${-100 + scrollY * 0.8}px`,
           filter: "blur(120px)",
+          backgroundImage: "linear-gradient(to top right, #9333ea 30%, #0AFFED 70%)",
+          transform: `rotate(${scrollY * 0.15}deg)`,
         }}
       />
 
       {/* Hero Section */}
-      <section className="relative py-20 px-8 text-center z-10">
-        <h1
-          className="text-5xl font-bold mb-4 drop-shadow-[0_0_12px_rgba(167,139,250,0.4)] font-masiva"
-          style={{ color: "#c3c3c3" }}
-        >
-          Ollantay Scocos yourself
+      <section 
+        className="relative min-h-[100vh] py-50 px-8 text-center z-10"
+        style={{ color: "#BADEFC" }}
+      >
+        <h1 className="text-7xl font-bold mb-4 drop-shadow-[0_0_12px_rgba(0,0,0,0.6)] font-masiva">
+          Ollantay Z. Scocos
         </h1>
-        <p className="text-xl max-w-xl mx-auto text-slate-300 font-black italic drop-shadow-[0_0_6px_rgba(100,116,139,0.3)] font-masiva">
-          Software Engineer — University of Awesome — Building cool stuff with React.
+        <p className="text-xl max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva" >
+          Software Engineer
+        </p>
+        <p className="text-l max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva" >
+          University of Illinois at Urbana-Champaign 
         </p>
       </section>
 
       {/* Main Content */}
-      <div className="flex max-w-7xl mx-auto my-12 px-8 gap-8 font-masiva">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto my-12 px-4 sm:px-6 md:px-8 gap-8 font-masiva">
         {/* Sticky Info Box */}
-        <aside className="w-1/3 sticky top-20 self-start bg-[#0f172a] p-6 rounded shadow-md border border-[#312e81] font-masiva">
+        <aside 
+          className="md:w-1/3 sticky top-20 self-start bg-[#0f172a] p-6 rounded shadow-md border border-[#312e81] font-masiva"
+          style={{ color: "#BADEFC" }}
+        >
           <h2 className="text-2xl font-black mb-2 font-masiva">Ollantay Scocos</h2>
           <p className="mb-4 font-bold font-masiva">University of Awesome</p>
-          <div className="flex space-x-4 font-bold font-masiva">
+          <div className="flex space-x-4 items-center">
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/ollantay-scocos/"
               target="_blank"
               rel="noreferrer"
-              className="text-purple-300 hover:text-purple-400 hover:underline font-masiva"
+              className="hover:opacity-80 transition"
+              aria-label="LinkedIn"
             >
-              LinkedIn
+              <LinkedInIcon 
+                className="w-6 h-6 fill-[#0AFFED] hover:fill-purple-400 transition" 
+                
+              />
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Oscocos"
               target="_blank"
               rel="noreferrer"
-              className="text-purple-300 hover:text-purple-400 hover:underline font-masiva"
+              className="hover:opacity-80 transition"
+              aria-label="GitHub"
             >
-              GitHub
+              <GitHubIcon className="w-6 h-6 fill-[#0AFFED] hover:fill-purple-400 transition" />
             </a>
           </div>
         </aside>
 
         {/* Sections */}
-        <main className="w-2/3 space-y-16 font-masiva">
-          <AnimatedSection title="Work Experience">
+        <main className="md:w-2/3 space-y-16 font-masiva">
+          <AnimatedSection 
+            title="Work Experience"
+            titleStyle={{ color: "#BADEFC" }}
+          >
             <WorkExperience
               jobs={[
                 {
@@ -81,20 +99,24 @@ export default function Home() {
                     'Analyzed 1,000+ lines of code against project-specific rubrics focused on correctness, truthfulness, safety, and helpfulness to ensure high-quality model outputs.',
                     'Streamlined AI model selection processes, resulting in a 20% reduction in manual QA efforts; authored 100+ comprehensive justifications to support model choices and enhance decision-making efficiency.',
                   ],
-                }, // Note to self: here you can add more
+                },
               ]}
             />
           </AnimatedSection>
+
           <AnimatedSection title="Projects" />
+
           <AnimatedSection title="Education">
-            <div className="bg-[#0f172a] border border-purple-600 rounded-md p-6 shadow-md max-w-3xl mx-auto text-slate-300">
+            <div 
+            className="bg-[#0f172a] border border-purple-600 rounded-md p-6 shadow-md max-w-3xl mx-auto text-slate-300"
+            style={{color: "#BADEFC"}}
+            >
               <p className="font-semibold text-purple-300">
                 University of Illinois at Urbana-Champaign
               </p>
               <p className="italic text-sm text-slate-400 mb-2">
-                Bachelor of Science in Computer Science + Astronomy &nbsp;&bull;&nbsp; August 2018 – December 2023
+                B.S. in Computer Science + Astronomy &nbsp;&bull;&nbsp; August 2018 – December 2023
               </p>
-              <p className="mb-2">Dean’s List Fall 2018</p>
               <p className="font-semibold mb-1">Related Coursework:</p>
               <ul className="list-disc list-inside space-y-1">
                 <li>Software Design Studio</li>

@@ -17,8 +17,16 @@ export default function WorkExperience({ jobs }) {
             {job.company} — {job.location}
           </p>
           <p className="italic text-sm text-slate-400">{job.dates}</p>
-          <p className="font-semibold mt-2 text-slate-200">{job.title}</p>
-          <ul className="list-disc list-inside space-y-2 text-sm leading-relaxed text-slate-300 mt-2">
+          <p 
+            className="font-semibold mt-2 "
+            style={{color: "#BADEFC"}}
+          >
+            {job.title}
+          </p>
+          <ul 
+            className="list-disc list-inside space-y-2 text-sm leading-relaxed text-slate-300 mt-2"
+            style={{color: "#BADEFC"}}
+          >
             {job.responsibilities.map((res, idx) => (
               <li key={idx}>{res}</li>
             ))}

@@ -15,8 +15,9 @@
   }
 }
 
-body {
+html, body {
   font-family: 'Masiva', Arial, Helvetica, sans-serif;
+  background-color: #020712;
 }
 
 @font-face {
