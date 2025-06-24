@@ -1,14 +1,28 @@
+"use client";
+
 import AnimatedSection from "../components/AnimatedSection";
 import WorkExperience from "../components/WorkExperience";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#020712] text-slate-200 font-masiva relative">
       {/* Gradient Blur Background */}
       <div
         aria-hidden="true"
-        className="absolute -top-40 left-1/2 -translate-x-1/2 transform rounded-full bg-gradient-to-tr from-purple-600 to-indigo-400 opacity-40 blur-3xl w-[72rem] h-[72rem] pointer-events-none"
-        style={{ filter: "blur(120px)" }}
+        className="absolute left-1/2 -translate-x-1/2 transform rounded-full bg-gradient-to-tr from-purple-600 to-indigo-400 opacity-40 blur-3xl w-[72rem] h-[72rem] pointer-events-none"
+        style={{
+          top: `${-300 + scrollY * 0.6}px`,
+          filter: "blur(120px)",
+        }}
       />
 
       {/* Hero Section */}
