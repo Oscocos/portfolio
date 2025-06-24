@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
 import { motion } from 'framer-motion';
 
-export default function AnimatedSection({ title }) {
+export default function AnimatedSection({ title, children }) {
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -14,8 +14,10 @@ export default function AnimatedSection({ title }) {
         background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
       }}
     >
-      <h3 className="text-3xl font-bold mb-4 text-purple-300 drop-shadow-[0_0_8px_rgba(167,139,250,0.2)]">{title}</h3>
-      <p>Content for {title} goes here.</p>
+      <h3 className="text-3xl font-bold mb-4 text-purple-300 drop-shadow-[0_0_8px_rgba(167,139,250,0.2)]">
+        {title}
+      </h3>
+      <div>{children}</div>
     </motion.section>
   );
 }
