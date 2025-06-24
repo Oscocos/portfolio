@@ -3,7 +3,7 @@ import WorkExperience from "../components/WorkExperience";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#020712] text-slate-200 font-masiva relative overflow-hidden">
+    <div className="min-h-screen bg-[#020712] text-slate-200 font-masiva relative">
       {/* Gradient Blur Background */}
       <div
         aria-hidden="true"
@@ -25,7 +25,7 @@ export default function Home() {
       </section>
 
       {/* Main Content */}
-      <div className="flex max-w-7xl mx-auto my-12 px-8 gap-8 relative z-10 font-masiva">
+      <div className="flex max-w-7xl mx-auto my-12 px-8 gap-8 font-masiva">
         {/* Sticky Info Box */}
         <aside className="w-1/3 sticky top-20 self-start bg-[#0f172a] p-6 rounded shadow-md border border-[#312e81] font-masiva">
           <h2 className="text-2xl font-black mb-2 font-masiva">Ollantay Scocos</h2>
@@ -72,7 +72,28 @@ export default function Home() {
             />
           </AnimatedSection>
           <AnimatedSection title="Projects" />
-          <AnimatedSection title="Education" />
+          <AnimatedSection title="Education">
+            <div className="bg-[#0f172a] border border-purple-600 rounded-md p-6 shadow-md max-w-3xl mx-auto text-slate-300">
+              <p className="font-semibold text-purple-300">
+                University of Illinois at Urbana-Champaign
+              </p>
+              <p className="italic text-sm text-slate-400 mb-2">
+                Bachelor of Science in Computer Science + Astronomy &nbsp;&bull;&nbsp; August 2018 – December 2023
+              </p>
+              <p className="mb-2">Dean’s List Fall 2018</p>
+              <p className="font-semibold mb-1">Related Coursework:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Software Design Studio</li>
+                <li>Data Structures and Algorithms</li>
+                <li>System Programming</li>
+                <li>Computer Architecture</li>
+                <li>Artificial Intelligence</li>
+                <li>Programming for Data Science</li>
+                <li>Statistical Analysis</li>
+                <li>Algorithms & Models of Computation</li>
+              </ul>
+            </div>
+          </AnimatedSection>
         </main>
       </div>
     </div>
