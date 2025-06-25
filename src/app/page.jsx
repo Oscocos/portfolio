@@ -1,48 +1,64 @@
 "use client";
 
+import { useEffect, useState, useRef } from "react";
+
 import LinkedInIcon from '../components/icons/InBug-Black.svg';
 import GitHubIcon from '../components/icons/github-mark.svg';
+import GmailIcon from '../components/icons/gmail-icon.svg';
+
 import AnimatedSection from "../components/AnimatedSection";
 import WorkExperience from "../components/WorkExperience";
-import Projects from "../components/ProjectsSection"
-import GmailIcon from '../components/icons/gmail-icon.svg';
+import Projects from "../components/ProjectsSection";
 import SkillsSection from '../components/SkillsSection';
-import { useEffect, useState } from "react";
+import ZephyrosIntro from "../components/ZephyrosIntro";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
+  const [showIntro, setShowIntro] = useState(false);
+  const heroZRef = useRef(null);
 
   useEffect(() => {
+    const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
+    if (!hasSeenIntro) {
+      setShowIntro(true);
+      sessionStorage.setItem("hasSeenIntro", "true");
+    }
+
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
   return (
     <div className="min-h-screen bg-[#020712] text-slate-200 font-masiva relative">
+      {showIntro && <ZephyrosIntro onFinish={() => setShowIntro(false)} targetRef={heroZRef} />}
       {/* Gradient Blur Background */}
       <div
         aria-hidden="true"
-        className="absolute left-1/2 -translate-x-1/2 transform rounded-full bg-gradient-to-tr opacity-40 blur-xl pointer-events-none"
+        className="absolute left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-tr opacity-40 blur-xl pointer-events-none"
         style={{
           top: `${-100 + scrollY * 0.8}px`,
           filter: "blur(120px)",
           backgroundImage: "linear-gradient(to top right, #9333ea 30%, #0AFFED 70%)",
           transform: `rotate(${scrollY * 0.15}deg)`,
-          width: "66vw",  // 60% of viewport width
+          width: "66vw",
           height: "66vw",
         }}
       />
 
       {/* Hero Section */}
-      <section
-        className="relative min-h-[100vh] py-50 px-8 text-center z-10"
-        style={{ color: "#BADEFC" }}
+      <section className="relative min-h-[100vh] py-50 px-8 text-center z-10" 
+        style={{ color: "#BADEFC", opacity: showIntro ? 0 : 1,
+        pointerEvents: showIntro ? "none" : "auto",
+        position: "relative",
+        zIndex: 0,}}
       >
-        <h1 className="text-7xl font-bold mb-4 drop-shadow-[0_0_12px_rgba(0,0,0,0.6)] font-masiva">
-          Ollantay Z. Scocos
+        <h1 className="text-7xl font-bold mb-4 drop-shadow-[0_0_12px_rgba(0,0,0,0.6)] text-[#0AFFED] font-masiva">
+          Ollantay <span id="hero-z" ref={heroZRef}>Z</span>. Scocos
         </h1>
-        <p className="text-xl max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva" >
+        <p className="text-xl max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva">
           Software Engineer
         </p>
         <a
@@ -66,35 +82,37 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="flex flex-col md:flex-row max-w-7xl mx-auto my-12 px-4 sm:px-6 md:px-8 gap-8 font-masiva">
+        
         {/* Sticky Info Box */}
         <aside
           className="
-            w-full 
+            w-full
             md:w-auto md:min-w-[260px] md:max-w-[300px]
-            md:sticky md:top-20 
-            self-start 
-            bg-[#0f172a] 
-            p-6 
-            rounded 
-            shadow-md 
-            border 
-            border-[#312e81] 
+            md:sticky md:top-20
+            self-start
+            bg-[#0f172a]
+            p-6
+            rounded
+            shadow-md
+            border border-[#312e81]
             z-10
           "
           style={{ color: "#BADEFC" }}
         >
-
           <h2 className="text-2xl font-black mb-2 font-masiva text-glow text-[#0AFFED]">Ollantay Z. Scocos</h2>
-          <p className="mb-4 font-bold font-masiva text-glow text-[#EEF0F2] text-center">University of <span className="font-bold font-masiva text-glow text-[#FF552E]">I</span>llinois at Urbana-Champaign</p>
+          <p className="mb-4 font-bold font-masiva text-glow text-[#EEF0F2] text-center">
+            University of <span className="font-bold font-masiva text-glow text-[#FF552E]">I</span>llinois at Urbana-Champaign
+          </p>
+
           <div className="flex space-x-4 items-center justify-center">
-            <a href="https://www.linkedin.com/in/ollantay-scocos/" target="_blank" rel="noreferrer" className="hover:opacity-80 transition" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/ollantay-scocos/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="hover:opacity-80 transition">
               <LinkedInIcon className="w-6 h-6 fill-[#0AFFED] hover:fill-purple-400 transition" />
             </a>
-            <a href="https://github.com/Oscocos" target="_blank" rel="noreferrer" className="hover:opacity-80 transition" aria-label="GitHub">
+            <a href="https://github.com/Oscocos" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:opacity-80 transition">
               <GitHubIcon className="w-6 h-6 fill-[#0AFFED] hover:fill-purple-400 transition" />
             </a>
-            <a href="mailto:olscocos@gmail.com" className="hover:opacity-80 transition" aria-label="Gmail" style={{ color: 'unset' }}>
-              <GmailIcon className="w-9 h-9  hover:fill-purple-400 transition" />
+            <a href="mailto:olscocos@gmail.com" aria-label="Gmail" style={{ color: 'unset' }} className="hover:opacity-80 transition">
+              <GmailIcon className="w-9 h-9 hover:fill-purple-400 transition" />
             </a>
             <a
               href="/resume.pdf"
@@ -105,15 +123,11 @@ export default function Home() {
               Resume
             </a>
           </div>
-
         </aside>
 
         {/* Sections */}
         <main className="md:w-2/3 space-y-16 font-masiva text-glow">
-          <AnimatedSection
-            title="Work Experience"
-            titleStyle={{ color: "#0AFFED" }}
-          >
+          <AnimatedSection title="Work Experience" titleStyle={{ color: "#0AFFED" }}>
             <div
               className="bg-[#000000]/99 border rounded-md p-6 shadow-md max-w-3xl mx-auto text-slate-300"
               style={{ borderColor: "#0AFFED", color: "#BADEFC" }}
@@ -138,10 +152,7 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection
-            title="Projects"
-            titleStyle={{ color: "#0AFFED" }}
-          >
+          <AnimatedSection title="Projects" titleStyle={{ color: "#0AFFED" }}>
             <div
               className="bg-[#000000] border rounded-md p-6 shadow-md max-w-3xl mx-auto"
               style={{ borderColor: "#0AFFED" }}
@@ -225,7 +236,6 @@ export default function Home() {
                 },
               ]}
             />
-
           </AnimatedSection>
 
           <AnimatedSection title="Education" titleStyle={{ color: "#0AFFED" }}>
