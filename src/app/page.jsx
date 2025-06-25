@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import LinkedInIcon from '../components/icons/InBug-Black.svg';
 import GitHubIcon from '../components/icons/github-mark.svg';
 import GmailIcon from '../components/icons/gmail-icon.svg';
+import LeetCodeIcon from '../components/icons/leetcode.svg';
 
 import AnimatedSection from "../components/AnimatedSection";
 import WorkExperience from "../components/WorkExperience";
@@ -115,6 +116,9 @@ export default function Home() {
             </a>
             <a href="mailto:olscocos@gmail.com" aria-label="Gmail" style={{ color: 'unset' }} className="hover:opacity-80 transition">
               <GmailIcon className="w-9 h-9 hover:fill-purple-400 transition" />
+            </a>
+            <a href="https://leetcode.com/u/oscocos/" target="_blank" rel="noreferrer" aria-label="LeetCode" style={{ color: 'unset' }} className="hover:opacity-80 transition">
+              <LeetCodeIcon className="w-6 h-6 hover:fill-purple-400 transition" />
             </a>
             <a
               href="/resume.pdf"
