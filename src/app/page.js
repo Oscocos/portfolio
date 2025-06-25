@@ -6,6 +6,7 @@ import AnimatedSection from "../components/AnimatedSection";
 import WorkExperience from "../components/WorkExperience";
 import Projects from "../components/ProjectsSection"
 import GmailIcon from '../components/icons/gmail-icon.svg';
+import SkillsSection from '../components/SkillsSection';
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -32,9 +33,9 @@ export default function Home() {
           height: "66vw",
         }}
       />
-    
+
       {/* Hero Section */}
-      <section 
+      <section
         className="relative min-h-[100vh] py-50 px-8 text-center z-10"
         style={{ color: "#BADEFC" }}
       >
@@ -44,17 +45,17 @@ export default function Home() {
         <p className="text-xl max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva" >
           Software Engineer
         </p>
-        <a 
-          href="mailto:olscocos@gmail.com" 
+        <a
+          href="mailto:olscocos@gmail.com"
           className="text-l max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva hover:opacity-90 hover:text-[#A1FFCE] transition"
         >
           olscocos@gmail.com
         </a>
 
         <div className="mt-6">
-          <a 
-            href="/resume.pdf" 
-            download 
+          <a
+            href="/resume.pdf"
+            download
             className="inline-block px-6 py-3 mt-4 bg-[#0AFFED] text-black font-semibold rounded shadow hover:bg-[#09d8c9] transition"
             aria-label="Download Resume"
           >
@@ -84,7 +85,7 @@ export default function Home() {
         >
 
           <h2 className="text-2xl font-black mb-2 font-masiva text-glow text-[#0AFFED]">Ollantay Z. Scocos</h2>
-          <p className="mb-4 font-bold font-masiva text-glow text-[#EEF0F2]">University of Illinois at Urbana-Champaign</p>
+          <p className="mb-4 font-bold font-masiva text-glow text-[#EEF0F2] text-center">University of <span className="font-bold font-masiva text-glow text-[#FF552E]">I</span>llinois at Urbana-Champaign</p>
           <div className="flex space-x-4 items-center justify-center">
             <a href="https://www.linkedin.com/in/ollantay-scocos/" target="_blank" rel="noreferrer" className="hover:opacity-80 transition" aria-label="LinkedIn">
               <LinkedInIcon className="w-6 h-6 fill-[#0AFFED] hover:fill-purple-400 transition" />
@@ -95,9 +96,9 @@ export default function Home() {
             <a href="mailto:olscocos@gmail.com" className="hover:opacity-80 transition" aria-label="Gmail" style={{ color: 'unset' }}>
               <GmailIcon className="w-9 h-9  hover:fill-purple-400 transition" />
             </a>
-            <a 
-              href="/resume.pdf" 
-              download 
+            <a
+              href="/resume.pdf"
+              download
               className="text-[#0AFFED] hover:text-purple-400 underline font-semibold text-sm"
               aria-label="Download Resume"
             >
@@ -109,13 +110,13 @@ export default function Home() {
 
         {/* Sections */}
         <main className="md:w-2/3 space-y-16 font-masiva text-glow">
-          <AnimatedSection 
+          <AnimatedSection
             title="Work Experience"
-            titleStyle={{ color: "#0AFFED"}}
+            titleStyle={{ color: "#0AFFED" }}
           >
-            <div 
+            <div
               className="bg-[#000000]/99 border rounded-md p-6 shadow-md max-w-3xl mx-auto text-slate-300"
-              style={{borderColor: "#0AFFED", color: "#BADEFC"}}
+              style={{ borderColor: "#0AFFED", color: "#BADEFC" }}
             >
               <WorkExperience
                 jobs={[
@@ -137,11 +138,11 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection 
-            title="Projects" 
-            titleStyle={{ color: "#0AFFED"}}
+          <AnimatedSection
+            title="Projects"
+            titleStyle={{ color: "#0AFFED" }}
           >
-            <div 
+            <div
               className="bg-[#000000] border rounded-md p-6 shadow-md max-w-3xl mx-auto"
               style={{ borderColor: "#0AFFED" }}
             >
@@ -182,9 +183,54 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
+          <AnimatedSection title="Technical Proficiencies" titleStyle={{ color: "#0AFFED" }}>
+            <SkillsSection
+              skills={[
+                {
+                  category: 'Programming Languages',
+                  items: [
+                    ['Python', 0.95],
+                    ['C', 0.9],
+                    ['HTML', 0.9],
+                    ['CSS', 0.9],
+                    ['C++', 0.9],
+                    ['JavaScript', 0.8],
+                    ['Java', 0.75],
+                    ['R', 0.7],
+                    ['SQL', 0.7],
+                    ['Haskell', 0.6],
+                    ['MatLab', 0.5],
+                  ],
+                },
+                {
+                  category: 'Frameworks / Tools',
+                  items: [
+                    ['Git', 0.90],
+                    ['GitHub', 0.90],
+                    ['Linux (Ubuntu)', 0.9],
+                    ['Pandas', 0.85],
+                    ['Numpy', 0.85],
+                    ['Jupyter Notebooks', 0.85],
+                    ['React', 0.80],
+                    ['Visual Studio', 0.8],
+                    ['IntelliJ', 0.75],
+                    ['RESTful API', 0.75],
+                    ['TCP/IP', 0.7],
+                    ['Android Studio', 0.7],
+                    ['PyTorch', 0.65],
+                    ['AWS', 0.6],
+                    ['Excel', 0.9],
+                    ['Word', 0.9],
+                  ],
+                },
+              ]}
+            />
+
+          </AnimatedSection>
+
           <AnimatedSection title="Education" titleStyle={{ color: "#0AFFED" }}>
-            <div 
-              className="relative border rounded-md p-6 shadow-md max-w-3xl mx-auto"
+            <div
+              className="relative bg-[#000000]/40 border rounded-md p-6 shadow-md max-w-3xl mx-auto"
               style={{ borderColor: "#0AFFED", color: "#BADEFC" }}
             >
               <div className="absolute inset-0 bg-[#050505] rounded-md -z-10" />
