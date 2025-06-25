@@ -49,11 +49,13 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] py-50 px-8 text-center z-10" 
-        style={{ color: "#BADEFC", opacity: showIntro ? 0 : 1,
-        pointerEvents: showIntro ? "none" : "auto",
-        position: "relative",
-        zIndex: 0,}}
+      <section className="relative min-h-[100vh] py-50 px-8 text-center z-10"
+        style={{
+          color: "#BADEFC", opacity: showIntro ? 0 : 1,
+          pointerEvents: showIntro ? "none" : "auto",
+          position: "relative",
+          zIndex: 0,
+        }}
       >
         <h1 className="text-7xl font-bold mb-4 drop-shadow-[0_0_12px_rgba(0,0,0,0.6)] text-[#0AFFED] font-masiva">
           Ollantay <span id="hero-z" ref={heroZRef}>Z</span>. Scocos
@@ -82,7 +84,7 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="flex flex-col md:flex-row max-w-7xl mx-auto my-12 px-4 sm:px-6 md:px-8 gap-8 font-masiva">
-        
+
         {/* Sticky Info Box */}
         <aside
           className="
@@ -159,6 +161,17 @@ export default function Home() {
             >
               <Projects
                 projects={[
+                  {
+                    title: 'This Portfolio Website! (React, Tailwind CSS, Next.js, Framer Motion, Vercel)',
+                    stack: 'React, Tailwind CSS, Next.js, Framer Motion, Vercel',
+                    description: [
+                      'Crafted fully responsive portfolio site showcasing software engineering projects, skills, and experience with smooth animations and an intuitive layout.',
+                      'Developed reusable React components to organize and display 20+ data-driven items with clean, accessible UX and interactive transitions.',
+                      'Introduced interactive skill bars using React and Tailwind CSS to visually convey proficiency across 25+ technologies, built with a scalable design supporting confidence metrics for future extensibility.',
+                      'Published and maintained site on Vercel with automated deployments through GitHub, enabling quick iteration and continuous delivery.',
+                    ],
+                    github: 'https://github.com/Oscocos/portfolio',
+                  },
                   {
                     title: 'Wrapped Now (JavaScript, HTML, CSS)',
                     stack: 'JavaScript, HTML, CSS, Spotify API, OAuth 2.0',
