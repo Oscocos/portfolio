@@ -61,12 +61,12 @@ export default function Home() {
         <p className="text-xl max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva">
           Software Engineer
         </p>
-        <a
+        {/*<a
           href="mailto:olscocos@gmail.com"
           className="text-l max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva hover:opacity-90 hover:text-[#A1FFCE] transition"
         >
           olscocos@gmail.com
-        </a>
+        </a> */}
 
         <div className="mt-6">
           <a
@@ -177,7 +177,6 @@ export default function Home() {
                       'Built an Object-Oriented structure to manage TV data efficiently.',
                       'Added features to retrieve episodes by various parameters.',
                     ],
-                    youtube: 'https://www.youtube.com/watch?v=ZsWN6sNzOAA&t=129s'
                   },
                   {
                     title: 'QuickEats (Java)',
@@ -188,6 +187,7 @@ export default function Home() {
                       'Designed UI for flexible filtering by food type and distance.',
                     ],
                     github: 'https://github.com/Oscocos/RestaurantPicker',
+                    youtube: 'https://www.youtube.com/watch?v=ZsWN6sNzOAA&t=129s'
                   },
                 ]}
               />

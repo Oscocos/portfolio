@@ -12,7 +12,7 @@ export default function ZephyrosIntro({ onFinish, targetRef }) {
         const timer = setTimeout(() => {
             setShow(false);
             onFinish?.();
-        }, 2000);
+        }, 2100);
 
         requestAnimationFrame(() => {
             if (targetRef?.current && introZRef?.current) {
@@ -68,7 +68,7 @@ export default function ZephyrosIntro({ onFinish, targetRef }) {
                                     initial={{ x: 0, y: 0, opacity: 1 }}
                                     animate={{ x, y, opacity: 0 }}
                                     transition={{
-                                        delay: .2 + idx * 0.1,
+                                        delay: .5 + idx * 0.1,
                                         duration: 1,
                                         ease: "easeOut"
                                     }}
