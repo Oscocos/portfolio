@@ -10,16 +10,29 @@ export default function Projects({ projects }) {
               <li key={idx}>{line}</li>
             ))}
           </ul>
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#BADEFC] underline mt-2 inline-block text-sm hover:text-[#0AFFED] transition"
-            >
-              GitHub Repo
-            </a>
-          )}
+
+          <div className="flex gap-4 mt-2">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#BADEFC] underline text-sm hover:text-[#0AFFED] transition"
+              >
+                GitHub Repo
+              </a>
+            )}
+            {project.youtube && (
+              <a
+                href={project.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#BADEFC] underline text-sm hover:text-[#0AFFED] transition"
+              >
+                YouTube Demo
+              </a>
+            )}
+          </div>
         </div>
       ))}
     </div>

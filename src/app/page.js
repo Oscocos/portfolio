@@ -50,15 +50,39 @@ export default function Home() {
         >
           olscocos@gmail.com
         </a>
+
+        <div className="mt-6">
+          <a 
+            href="/resume.pdf" 
+            download 
+            className="inline-block px-6 py-3 mt-4 bg-[#0AFFED] text-black font-semibold rounded shadow hover:bg-[#09d8c9] transition"
+            aria-label="Download Resume"
+          >
+            Resume
+          </a>
+        </div>
       </section>
 
       {/* Main Content */}
       <div className="flex flex-col md:flex-row max-w-7xl mx-auto my-12 px-4 sm:px-6 md:px-8 gap-8 font-masiva">
         {/* Sticky Info Box */}
-        <aside 
-          className="md:w-1/3 sticky top-20 self-start bg-[#0f172a] p-6 rounded shadow-md border border-[#312e81] font-masiva"
+        <aside
+          className="
+            w-full 
+            md:w-auto md:min-w-[260px] md:max-w-[300px]
+            md:sticky md:top-20 
+            self-start 
+            bg-[#0f172a] 
+            p-6 
+            rounded 
+            shadow-md 
+            border 
+            border-[#312e81] 
+            z-10
+          "
           style={{ color: "#BADEFC" }}
         >
+
           <h2 className="text-2xl font-black mb-2 font-masiva text-glow text-[#0AFFED]">Ollantay Z. Scocos</h2>
           <p className="mb-4 font-bold font-masiva text-glow text-[#EEF0F2]">University of Illinois at Urbana-Champaign</p>
           <div className="flex space-x-4 items-center justify-center">
@@ -70,6 +94,14 @@ export default function Home() {
             </a>
             <a href="mailto:olscocos@gmail.com" className="hover:opacity-80 transition" aria-label="Gmail" style={{ color: 'unset' }}>
               <GmailIcon className="w-9 h-9  hover:fill-purple-400 transition" />
+            </a>
+            <a 
+              href="/resume.pdf" 
+              download 
+              className="text-[#0AFFED] hover:text-purple-400 underline font-semibold text-sm"
+              aria-label="Download Resume"
+            >
+              Resume
             </a>
           </div>
 
@@ -123,7 +155,7 @@ export default function Home() {
                       'Enabled secure user login via OAuth 2.0.',
                       'Displayed top artists and songs across 1, 6, and 12-month timeframes.',
                     ],
-                    github: 'https://github.com/yourusername/wrapped-now',
+                    github: 'https://github.com/Oscocos/WrappedNow',
                   },
                   {
                     title: 'TV Time (Java, C++)',
@@ -133,7 +165,7 @@ export default function Home() {
                       'Built an Object-Oriented structure to manage TV data efficiently.',
                       'Added features to retrieve episodes by various parameters.',
                     ],
-                    github: 'https://github.com/yourusername/tv-time',
+                    youtube: 'https://www.youtube.com/watch?v=ZsWN6sNzOAA&t=129s'
                   },
                   {
                     title: 'QuickEats (Java)',
@@ -143,7 +175,7 @@ export default function Home() {
                       'Integrated location services and Places API to suggest 300+ nearby options.',
                       'Designed UI for flexible filtering by food type and distance.',
                     ],
-                    github: 'https://github.com/yourusername/quick-eats',
+                    github: 'https://github.com/Oscocos/RestaurantPicker',
                   },
                 ]}
               />
@@ -167,14 +199,20 @@ export default function Home() {
               </p>
               <ul className="list-disc list-inside space-y-2 font-bold leading-relaxed text-[#EEF0F2] mt-2 text-glow">
                 {[
-                  "Software Design Studio",
-                  "Data Structures and Algorithms",
-                  "System Programming",
-                  "Computer Architecture",
                   "Artificial Intelligence",
+                  "Data Structures and Algorithms",
                   "Programming for Data Science",
+                  "Intro to Algorithms & Models of Computation",
+                  "Programming Languages & Compilers",
+                  "Computer Architecture",
+                  "System Programming",
                   "Statistical Analysis",
-                  "Algorithms & Models of Computation"
+                  "Microcomputer Applications",
+                  "Computing in Astronomy",
+                  "Software Design Studio",
+                  "Discrete Structures",
+                  "Calculus 1–3",
+                  "Linear Algebra"
                 ].map((course, idx) => (
                   <li key={idx}>{course}</li>
                 ))}
