@@ -15,20 +15,17 @@ import ZephyrosIntro from "../components/ZephyrosIntro";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
-  const [fadeIn, setFadeIn] = useState(false);
   const heroZRef = useRef(null);
 
   useEffect(() => {
+    setHasMounted(true);
     const hasSeenIntro = sessionStorage.getItem("hasSeenIntro");
+
     if (!hasSeenIntro) {
       setShowIntro(true);
       sessionStorage.setItem("hasSeenIntro", "true");
-      
-      document.body.style.opacity = "0";
-      document.body.style.pointerEvents = "none";
-    } else {
-      setFadeIn(true); 
     }
 
     const handleScroll = () => setScrollY(window.scrollY);
@@ -37,18 +34,16 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleIntroFinish = () => {
-    setShowIntro(false);
-
-    document.body.style.transition = "opacity 0.4s ease";
-    document.body.style.opacity = "1";
-    document.body.style.pointerEvents = "auto";
-    setFadeIn(true);
-  };
+  if (!hasMounted) return null;
 
   return (
     <div className="min-h-screen bg-[#020712] text-slate-200 font-masiva relative">
-      {showIntro && <ZephyrosIntro onFinish={() => setShowIntro(false)} targetRef={heroZRef} />}
+      {showIntro && (
+        <ZephyrosIntro
+          onFinish={() => setShowIntro(false)}
+          targetRef={heroZRef}
+        />
+      )}
       {/* Gradient Blur Background */}
       <div
         aria-hidden="true"
@@ -69,7 +64,7 @@ export default function Home() {
         style={{
           color: "#BADEFC",
           opacity: showIntro ? 0 : 1,
-          transition: 'opacity 0.3s ease',
+          transition: 'opacity 0.8s ease',
           pointerEvents: showIntro ? "none" : "auto",
           position: "relative",
           zIndex: 0,
