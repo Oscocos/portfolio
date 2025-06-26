@@ -55,6 +55,7 @@ export default function Home() {
         style={{
           color: "#BADEFC",
           opacity: showIntro ? 0 : 1,
+          transition: 'opacity 0.3s ease',
           pointerEvents: showIntro ? "none" : "auto",
           position: "relative",
           zIndex: 0,
@@ -186,6 +187,7 @@ export default function Home() {
                       'Displayed top artists and songs across 1, 6, and 12-month timeframes.',
                     ],
                     github: 'https://github.com/Oscocos/WrappedNow',
+                    youtube: 'https://www.youtube.com/watch?v=qzNMApTL4_Y',
                   },
                   {
                     title: 'TV Time (Java, C++)',
