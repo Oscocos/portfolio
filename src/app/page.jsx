@@ -50,37 +50,38 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] py-50 px-8 text-center z-10"
+      <section
+        className="relative min-h-screen flex flex-col justify-center items-center px-8 text-center z-10"
         style={{
-          color: "#BADEFC", opacity: showIntro ? 0 : 1,
+          color: "#BADEFC",
+          opacity: showIntro ? 0 : 1,
           pointerEvents: showIntro ? "none" : "auto",
           position: "relative",
           zIndex: 0,
         }}
       >
-        <h1 className="text-7xl font-bold mb-4 drop-shadow-[0_0_12px_rgba(0,0,0,0.6)] text-[#0AFFED] font-masiva">
-          Ollantay <span id="hero-z" ref={heroZRef}>Z</span>. Scocos
-        </h1>
-        <p className="text-xl max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva">
-          Software Engineer
-        </p>
-        {/*<a
-          href="mailto:olscocos@gmail.com"
-          className="text-l max-w-xl mx-auto font-black italic drop-shadow-[0_0_6px_rgba(0,0,0,0.6)] font-masiva hover:opacity-90 hover:text-[#A1FFCE] transition"
-        >
-          olscocos@gmail.com
-        </a> */}
 
-        <div className="mt-6">
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-block px-6 py-3 mt-4 bg-[#0AFFED] text-black font-semibold rounded shadow hover:bg-[#09d8c9] transition"
-            aria-label="Download Resume"
+        <h1
+          className="text-7xl font-bold mb-4 drop-shadow-[0_0_12px_rgba(0,0,0,0.6)] text-[#0AFFED] font-masiva"
+          style={{ lineHeight: '1' }}
+        >
+          Ollantay{" "}
+          <span
+            id="hero-z"
+            ref={heroZRef}
+            style={{
+              display: "inline-block",
+              lineHeight: "1",
+              fontSize: "5rem", 
+              transform: "translateY(5px)" 
+            }}
           >
-            Resume
-          </a>
-        </div>
+            Z
+          </span>
+          . Scocos
+        </h1>
+
+       
       </section>
 
       {/* Main Content */}
