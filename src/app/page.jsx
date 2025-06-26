@@ -16,6 +16,7 @@ import ZephyrosIntro from "../components/ZephyrosIntro";
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [showIntro, setShowIntro] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
   const heroZRef = useRef(null);
 
   useEffect(() => {
@@ -23,6 +24,11 @@ export default function Home() {
     if (!hasSeenIntro) {
       setShowIntro(true);
       sessionStorage.setItem("hasSeenIntro", "true");
+      
+      document.body.style.opacity = "0";
+      document.body.style.pointerEvents = "none";
+    } else {
+      setFadeIn(true); 
     }
 
     const handleScroll = () => setScrollY(window.scrollY);
@@ -31,6 +37,14 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleIntroFinish = () => {
+    setShowIntro(false);
+
+    document.body.style.transition = "opacity 0.4s ease";
+    document.body.style.opacity = "1";
+    document.body.style.pointerEvents = "auto";
+    setFadeIn(true);
+  };
 
   return (
     <div className="min-h-screen bg-[#020712] text-slate-200 font-masiva relative">

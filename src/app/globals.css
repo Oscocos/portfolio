@@ -6,8 +6,6 @@
   --foreground: #171717;
 }
 
-
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -60,4 +58,15 @@ html, body {
   text-shadow:
     0 3px 6px rgba(0, 0, 0, 0.75),
     0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.intro-active {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+body.intro-done {
+  opacity: 1;
+  pointer-events: auto;
 }
