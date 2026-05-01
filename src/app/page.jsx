@@ -157,11 +157,11 @@ export default function Home() {
                     dates: 'February 2024 – Present',
                     title: 'Software Engineer',
                     responsibilities: [
-                      'Designed and implemented 40+ algorithmic challenges daily in Python, C, and C++ to evaluate and train large language models, refining model accuracy, safety, and user experience.',
-                      'Authored and refined 200+ benchmark solutions by debugging and optimizing code in Python and C++, including database interactions, to improve model reasoning and output fidelity.',
-                      'Deployed and managed 100+ isolated test environments to validate AI code, directly improving model performance across correctness, truthfulness, helpfulness, and safety metrics.',
-                      'Analyzed 1,000+ lines of code against project-specific rubrics focused on correctness, truthfulness, safety, and helpfulness to ensure high-quality model outputs.',
-                      'Streamlined AI model selection processes, resulting in a 20% reduction in manual QA efforts; authored 100+ comprehensive justifications to support model choices and enhance decision-making efficiency.',
+                      'Audited and tested 10,000+ files across complex repositories, improving stakeholder-critical output fidelity by 18%',
+                      'Deployed 500+ reproducible Docker environments to execute and verify code, optimizing AI reliability and internal deliverable coding performance by up to 250%',
+                      'Automated evaluation tooling for Linux/WSL-based machine learning unit tests, reducing manual QA effort by 20%',
+                      'Architected and implemented 100+ cross-functional codebases involving Python, C++, TypeScript, backend, and database interactions, enabling large-scale LLM evaluation across diverse benchmarks',
+                      'Built and refined automated testing and CI/CD validation workflows for codebases, improving early detection of code-level defects and integration issues while reducing training validation failures by 35%',
                     ],
                   },
                 ]}
