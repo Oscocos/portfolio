@@ -177,7 +177,17 @@ export default function Home() {
               <Projects
                 projects={[
                   {
-                    title: 'This Portfolio Website! (React, Tailwind CSS, Next.js, Framer Motion, Vercel)',
+                    title: 'MuseShare',
+                    stack: 'TypeScript, React Native/Expo, Firebase, Firestore, REST APIs',
+                    description: [
+                      'Developed a full-stack React Native/Expo music-sharing app with direct messaging, profiles, and social media flows',
+                      'Engineered a persistent cellular automata visual identity system with a machine learning layer, evolving personalized 64x64 album-palette images that reflect each user’s music activity and style',
+                      'Integrated music metadata APIs with Firebase workflows and TypeScript caching, reducing redundant network/database calls and improving repeated-share latency by 50%+',
+                      'Architected scalable Firestore data models and access patterns to support fast client-side queries',
+                    ],
+                  },
+                  {
+                    title: 'This Portfolio Website!',
                     stack: 'React, Tailwind CSS, Next.js, Framer Motion, Vercel',
                     description: [
                       'Crafted fully responsive portfolio site showcasing software engineering projects, skills, and experience with smooth animations and an intuitive layout.',
@@ -188,7 +198,7 @@ export default function Home() {
                     github: 'https://github.com/Oscocos/portfolio',
                   },
                   {
-                    title: 'Wrapped Now (JavaScript, HTML, CSS)',
+                    title: 'Wrapped Now',
                     stack: 'JavaScript, HTML, CSS, Spotify API, OAuth 2.0',
                     description: [
                       'Engineered and deployed an interactive web application using the Spotify API.',
@@ -199,7 +209,7 @@ export default function Home() {
                     youtube: 'https://www.youtube.com/watch?v=qzNMApTL4_Y',
                   },
                   {
-                    title: 'TV Time (Java, C++)',
+                    title: 'TV Time',
                     stack: 'Java, C++, Gson API',
                     description: [
                       'Parsed and converted JSON using Gson API, reducing data fetching time by 35%.',
@@ -208,7 +218,7 @@ export default function Home() {
                     ],
                   },
                   {
-                    title: 'QuickEats (Java)',
+                    title: 'QuickEats',
                     stack: 'Java, Android, Google Places API',
                     description: [
                       'Developed an Android app for restaurant recommendations.',
